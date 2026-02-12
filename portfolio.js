@@ -14,17 +14,19 @@ const navTree = {
       {name:"BW", id:"fotky-analog-bw", images:true}
     ]}
   ],
-
   video: [
     {name:"KLIP", id:"video-klip", images:true},
     {name:"Performance", id:"video-performance", images:true},
     {name:"Video art", children:[
       {name:"ABC OCD", id:"video-art-abc", images:true},
       {name:"Sex sells", id:"video-art-sex", images:true},
-      { name:"Mrvenie", id:"video-art-mrvenie", images:true }
-
-]},
+      {name:"Mrvenie", id:"video-art-mrvenie", images:true}
+    ]},
     {name:"Vlog", id:"video-vlog", images:true}
+  ],
+  socha: [
+    {name:"Ťah na svoju stranu", id:"socha-tah", images:true},
+    {name:"Pery", id:"socha-pery", images:true}
   ]
 };
 
