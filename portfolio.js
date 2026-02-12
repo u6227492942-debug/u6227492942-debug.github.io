@@ -21,9 +21,9 @@ const navTree = {
     {name:"Video art", children:[
       {name:"ABC OCD", id:"video-art-abc", images:true},
       {name:"Sex sells", id:"video-art-sex", images:true},
-      { name:"Mrvenie", id:"video-mrvenie", images:true }
+      { name:"Mrvenie", id:"video-art-mrvenie", images:true }
 
-    ]},
+]},
     {name:"Vlog", id:"video-vlog", images:true}
   ]
 };
