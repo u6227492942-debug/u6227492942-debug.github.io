@@ -1,3 +1,5 @@
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 const center = document.getElementById('center');
 const mainCats = document.querySelectorAll('[data-main]');
 const otherCats = document.querySelectorAll('[data-category]');
@@ -18,11 +20,12 @@ const navTree = {
     {name:"Performance", id:"video-performance", images:true},
     {name:"Video art", children:[
       {name:"ABC OCD", id:"video-art-abc", images:true},
-      {name:"Sex sells", id:"video-art-sex", images:true},
-      {name:"Mrvenie", id:"video-mrvenie", images:true}
-    ]}
+      {name:"Sex sells", id:"video-art-sex", images:true}
+    ]},
+    {name:"Vlog", id:"video-vlog", images:true}
   ]
 };
+
 
 // Show a section by ID
 function showGallery(id){

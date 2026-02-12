@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Mom';
-  src: url('assets/fonts/Mom.ttf') format('truetype');
+  font-family: 'Receipt';
+  src: url('assets/fonts/Receipt.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -8,7 +8,7 @@
 /* Reset and base */
 * { margin:0; padding:0; box-sizing:border-box; }
 body, html { 
-  font-family: 'Mom', serif;
+  font-family: 'Receipt', serif;
   color:#666; 
   background:#fff; 
   height:100%; 
