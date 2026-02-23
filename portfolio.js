@@ -32,15 +32,10 @@ const navTree = {
   ]
 };
 
-// Hamburger toggle
+// Toggle: menu starts open, button adds .closed to hide it
 menuToggle.addEventListener('click', () => {
-  navList.classList.toggle('open');
+  navList.classList.toggle('closed');
 });
-
-// Close menu after picking a category (mobile UX)
-function closeMenu() {
-  navList.classList.remove('open');
-}
 
 function scrollToTop() {
   const content = document.querySelector('.content');
@@ -51,17 +46,16 @@ function scrollToTop() {
   }
 }
 
-// Show a section by ID
 function showGallery(id) {
   galleries.forEach(g => g.classList.remove('active'));
   center.classList.remove('active');
   center.innerHTML = '';
   if (id) document.getElementById(id).classList.add('active');
   scrollToTop();
-  closeMenu();
+  // Close menu on mobile after selecting
+  navList.classList.add('closed');
 }
 
-// Render subcategories in center
 function renderSubcats(items) {
   center.innerHTML = '';
   items.forEach(item => {
@@ -79,19 +73,20 @@ function renderSubcats(items) {
   });
   center.classList.add('active');
   scrollToTop();
+  // Close menu on mobile after selecting
+  navList.classList.add('closed');
 }
 
-// Click main categories (Fotky, Video, Socha)
+// Main categories (Fotky, Video, Socha)
 mainCats.forEach(cat => {
   cat.addEventListener('click', () => {
     galleries.forEach(g => g.classList.remove('active'));
     const tree = navTree[cat.dataset.main];
     if (tree) renderSubcats(tree);
-    closeMenu();
   });
 });
 
-// Click direct categories (Grafika, Obrazy, Odev)
+// Direct categories (Grafika, Obrazy, Odev)
 otherCats.forEach(cat => {
   cat.addEventListener('click', () => {
     showGallery(cat.dataset.category);
