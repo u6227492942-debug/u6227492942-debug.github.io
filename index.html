@@ -4,14 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marian Kalavsky | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <div class="container">
 
   <!-- Sidebar -->
   <aside class="sidebar">
-    <h1>Marian Kalavsky</h1>
+    <div class="sidebar-header">
+      <h1>Marian Kalavsky</h1>
+      <div id="menu-toggle">☰</div>
+    </div>
     <ul class="categories">
       <li data-main="fotky">Fotky</li>
       <li data-main="video">Video</li>
@@ -26,7 +29,7 @@
   <main class="content">
 
     <!-- Center for unfolding subcategories -->
-    <div id="center" class="category active"></div>
+    <div id="center" class="category"></div>
 
     <!-- Fotky / Digital -->
     <div id="fotky-digital" class="category">
@@ -36,6 +39,7 @@
         <img src="assets/images/huliedit.jpg" alt="light">
         <img src="assets/images/vyklad.jpg" alt="vyklad">
         <img src="assets/images/foto-syntéza.jpg" alt="foto-syntéza">
+        <img src="assets/images/DSC_0169.jpg" alt="hviezdy">
         <img src="assets/images/relax.jpg" alt="relax">
         <img src="assets/images/derealizácia.jpg" alt="derealizácia">
         <img src="assets/images/prilis vela ruk na objatie.jpg" alt="prilis vela ruk na objatie">
@@ -117,15 +121,7 @@
     <!-- Video / KLIP -->
     <div id="video-klip" class="category">
       <div class="image-stack">
-<div class="video-container">
-  <iframe 
-    src="https://www.youtube.com/embed/rNEjGs4vJks" 
-    title="YouTube Short" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-    allowfullscreen>
-  </iframe>
-</div>
+        <div class="video-container"><iframe src="https://www.youtube.com/embed/6epLcHWf5Ck?si=V7qGnFtovKNiEd2Z" allowfullscreen></iframe></div>
         <div class="video-container"><iframe src="https://www.youtube.com/embed/y2qxEuPJ83E?si=rHxcZmaHaoGt3x-F" allowfullscreen></iframe></div>
         <div class="video-container"><iframe src="https://www.youtube.com/embed/xLl7V5mXchM" allowfullscreen></iframe></div>
         <div class="video-container"><iframe src="https://www.youtube.com/embed/td2uT3OlLXc" allowfullscreen></iframe></div>
@@ -140,7 +136,7 @@
         <div class="art-text">
           <h2>Záplata</h2>
           <p><strong>Dĺžka videa:</strong> 10:03</p>
-          <p><strong>Anotácia:</strong> Dielo je videoperformance, ktorá predstavuje cyklus vzťahovej rotácie, kedy rany predošlého vzťahu, teda bolesť jeho ukončenia, chceme „zaplátať“ novým, nepremysleným, len aby sme prežili sklučujúce prázdno, teda jedná sa o dočasné riešenie, ktoré na rúchu stability zanecháva viac a viac rán a záplat, ktoré postupne znemožňujú jeho funkčnosť. Môj zvuk, spolu so špecifickým renderom videa, vytvárajú súlad a snažia sa pretaviť subjektívne reálie jednotlivca pomocou syntézy audia a videa a vtiahnúť tak pozorovateľa do performance. Pred posledným aktom, pri ktorom dochádza k uvedomeniu si svojej mizérie ktorá nemá východisko a vzdanie sa cyklu, zvlečenie rúcha. Zakrytím mojej tváre, som vytvoril niečo čo sa netýka len mňa, predstavujem univerzálnu skúsenosť.</p>
+          <p><strong>Anotácia:</strong> Dielo je videoperformance, ktorá predstavuje cyklus vzťahovej rotácie, kedy rany predošlého vzťahu, teda bolesť jeho ukončenia, chceme „zaplátať" novým, nepremysleným, len aby sme prežili sklučujúce prázdno, teda jedná sa o dočasné riešenie, ktoré na rúchu stability zanecháva viac a viac rán a záplat, ktoré postupne znemožňujú jeho funkčnosť. Môj zvuk, spolu so špecifickým renderom videa, vytvárajú súlad a snažia sa pretaviť subjektívne reálie jednotlivca pomocou syntézy audia a videa a vtiahnúť tak pozorovateľa do performance. Pred posledným aktom, pri ktorom dochádza k uvedomeniu si svojej mizérie ktorá nemá východisko a vzdanie sa cyklu, zvlečenie rúcha. Zakrytím mojej tváre, som vytvoril niečo čo sa netýka len mňa, predstavujem univerzálnu skúsenosť.</p>
         </div>
         <div class="video-container"><iframe src="https://www.youtube.com/embed/Os1fMdW9oGk" allowfullscreen></iframe></div>
         <img src="assets/images/video-performance2.jpg" alt="">
@@ -158,7 +154,7 @@
     <div id="video-art-abc" class="category">
       <div class="image-stack">
         <div class="art-text">
-          <p>Táto kolekcia vznikla počas karantény, kedy som bol „uväznený“ doma v nepríjemnom prostredí. Toto prostredie mi nedávalo žiadne možnosti sebarealizácie. Kolekcia zobrazuje uviaznutie v nekonečnom cykle rituálov.</p>
+          <p>Táto kolekcia vznikla počas karantény, kedy som bol „uväznený" doma v nepríjemnom prostredí. Toto prostredie mi nedávalo žiadne možnosti sebarealizácie. Kolekcia zobrazuje uviaznutie v nekonečnom cykle rituálov.</p>
         </div>
         <div class="video-container"><iframe src="https://www.youtube.com/embed/jGzMrO7SRZE" allowfullscreen></iframe></div>
         <img src="assets/images/video-art-abc2.jpg" alt="">
@@ -183,7 +179,7 @@
           <h2>MRVENIE, 2025</h2>
           <p class="meta">Marián Kaľavský, 2. Bc · @mariankalavsky · video 02:53 min</p>
           <p>Dielo je o autorovom subjektívnom zážitku, pri ktorom prežíval pocit zarývajúcich sa mikroplastov do jeho mäsa. Mikroplasty dnes prenikajú do všetkých vrstiev nášho organizmu. Vsugerovaný pocit, no ide v zásade o faktickú realitu. Ovplyvňujú len telo, alebo aj spôsob, akým myslíme, cítime a vnímame realitu?</p>
-          <p>The work is about the author’s subjective experience, during which he felt the sensation of microplastics embedding themselves into his flesh. Today, microplastics penetrate all layers of our bodies. It’s a suggested feeling, yet essentially a factual reality. Do they affect only the body, or also the way we think, feel, and perceive reality?</p>
+          <p>The work is about the author's subjective experience, during which he felt the sensation of microplastics embedding themselves into his flesh. Today, microplastics penetrate all layers of our bodies. It's a suggested feeling, yet essentially a factual reality. Do they affect only the body, or also the way we think, feel, and perceive reality?</p>
         </div>
         <div class="video-container"><iframe src="https://www.youtube.com/embed/mF0zX02jRoM" allowfullscreen></iframe></div>
         <img src="assets/images/video-art-sex2.jpg" alt="">
@@ -279,7 +275,6 @@
   </main>
 </div>
 
-<script src="portfolio.js"></script>
+<script src="portfolio.js?v=2"></script>
 </body>
 </html>
-

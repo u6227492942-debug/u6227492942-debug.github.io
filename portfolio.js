@@ -4,6 +4,8 @@ const center = document.getElementById('center');
 const mainCats = document.querySelectorAll('[data-main]');
 const otherCats = document.querySelectorAll('[data-category]');
 const galleries = document.querySelectorAll('.category:not(#center)');
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.querySelector('.sidebar ul');
 
 // Navigation tree
 const navTree = {
@@ -30,50 +32,63 @@ const navTree = {
   ]
 };
 
+// Toggle: menu starts open, button adds .closed to hide it
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('closed');
+});
 
-// Show a section by ID
-function showGallery(id){
-  // Hide all galleries
-  galleries.forEach(g=>g.classList.remove('active'));
-  // Hide and clear center
-  center.classList.remove('active');
-  center.innerHTML = '';
-
-  if(id) document.getElementById(id).classList.add('active');
+function scrollToTop() {
+  const content = document.querySelector('.content');
+  if (content.scrollHeight > content.clientHeight && content.scrollTop > 0) {
+    content.scrollTop = 0;
+  } else {
+    window.scrollTo(0, 0);
+  }
 }
 
-// Render subcategories in center
-function renderSubcats(items){
+function showGallery(id) {
+  galleries.forEach(g => g.classList.remove('active'));
+  center.classList.remove('active');
   center.innerHTML = '';
-  items.forEach(item=>{
-    const div = document.createElement('div');
-    div.className='subcat';
-    div.textContent=item.name;
-    center.appendChild(div);
+  if (id) document.getElementById(id).classList.add('active');
+  scrollToTop();
+  // Close menu on mobile after selecting
+  navList.classList.add('closed');
+}
 
-    div.addEventListener('click', ()=>{
-      if(item.images){
+function renderSubcats(items) {
+  center.innerHTML = '';
+  items.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'subcat';
+    div.textContent = item.name;
+    center.appendChild(div);
+    div.addEventListener('click', () => {
+      if (item.images) {
         showGallery(item.id);
-      } else if(item.children){
+      } else if (item.children) {
         renderSubcats(item.children);
       }
     });
   });
   center.classList.add('active');
+  scrollToTop();
+  // Close menu on mobile after selecting
+  navList.classList.add('closed');
 }
 
-// Click main categories (Fotky)
-mainCats.forEach(cat=>{
-  cat.addEventListener('click', ()=>{
-    galleries.forEach(g=>g.classList.remove('active'));
+// Main categories (Fotky, Video, Socha)
+mainCats.forEach(cat => {
+  cat.addEventListener('click', () => {
+    galleries.forEach(g => g.classList.remove('active'));
     const tree = navTree[cat.dataset.main];
-    if(tree) renderSubcats(tree);
+    if (tree) renderSubcats(tree);
   });
 });
 
-// Click other main categories (Video, Grafický, etc.)
-otherCats.forEach(cat=>{
-  cat.addEventListener('click', ()=>{
+// Direct categories (Grafika, Obrazy, Odev)
+otherCats.forEach(cat => {
+  cat.addEventListener('click', () => {
     showGallery(cat.dataset.category);
   });
 });
